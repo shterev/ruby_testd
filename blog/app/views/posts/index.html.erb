@@ -1,0 +1,17 @@
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Text</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title, :action => 'show',  :id => post %></td>
+      <td><%= post.author %></td>
+      <td><%= post.text %></td>
+    </tr>
+  <% end %>
+</table>

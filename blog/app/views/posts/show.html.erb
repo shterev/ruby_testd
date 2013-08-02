@@ -1,0 +1,24 @@
+
+<p>
+  <strong>Author:</strong>
+  <%= @post.author %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+<p>
+  <strong>Text:</strong>
+  <%= @post.text %>
+</p>
+
+<h2>Comments - <%= @number_of_comments %> </h2>
+
+<% if @post.comments.empty? %>
+  No comments!
+<% else %>
+  <%= render @post.comments %>
+<% end %>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form", :comment => @comment || @post.comments.build %>

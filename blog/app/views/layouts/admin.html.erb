@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= stylesheet_link_tag    "admin", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+<body>
+<nav>
+  <%= link_to 'Crete new post', new_admin_post_path %> |
+  <%= link_to 'All Posts', admin_root_path %> | 
+</nav>
+<p>&nbsp;</p>
+
+<%= yield %>
+
+</body>
+</html>

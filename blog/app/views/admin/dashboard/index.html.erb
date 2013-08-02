@@ -1,0 +1,22 @@
+﻿<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Text</th>
+    <th>Options</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title, admin_post_path(post) %></td>
+      <td><%= post.author %></td>
+      <td><%= truncate( post.text , length: 30) %></td>
+      <td>
+        <%= link_to 'Edit', edit_admin_post_path(post) %> |
+        <%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }  %>
+      </td>
+    </tr>
+  <% end %>
+</table>
